@@ -28,6 +28,7 @@ main().then(()=>{
 // app.use(cors());
 app.use(cors({
   origin: "http://localhost:5173",
+  origin:"https://ai-frontend-nx76txgzq-pargat-singhs-projects-16883af5.vercel.app/",
   credentials: true
 }));
 
