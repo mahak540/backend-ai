@@ -4,9 +4,9 @@ app.set("trust proxy",1);
 const cors = require("cors");
 const axios = require("axios");
 const mongoose = require("mongoose");
-// const port =  process.env.PORT || 5000 ;
-// const mongoStore = require("connect-mongo").default;
-const port = 5000;
+const port =  process.env.PORT || 5000 ;
+const mongoStore = require("connect-mongo").default;
+// const port = 5000;
 const session = require("express-session")
 const passport = require("passport")
 const authRoutes = require("./routes/auth.js")
@@ -39,16 +39,16 @@ app.use(session({
     secret:"1234",
     resave:false,
     saveUninitialized:false,
-    // proxy:true,
-    // store: mongoStore.create({
-    //   mongoUrl:DB,
-    // }),
-    // cookie:{
-    //   httpOnly:true,
-    //   secure:process.env.NODE_ENV === "production",
-    //   sameSite:"lax",
-    //   maxAge: 1000 * 60 * 60 * 24 * 7,
-    // }
+    proxy:true,
+    store: mongoStore.create({
+      mongoUrl:DB,
+    }),
+    cookie:{
+      httpOnly:true,
+      secure:process.env.NODE_ENV === "production",
+      sameSite:"lax",
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+    }
 }));
 
 
