@@ -27,8 +27,10 @@ main().then(()=>{
 
 // app.use(cors());
 app.use(cors({
-  origin: "http://localhost:5173",
-  origin:"https://ai-frontend-w7oi.onrender.com",
+  origin: [
+    "http://localhost:5173",
+    "https://ai-frontend-w7oi.onrender.com"
+  ],
   credentials: true
 }));
 
@@ -45,8 +47,8 @@ app.use(session({
     }),
     cookie:{
       httpOnly:true,
-      secure:process.env.NODE_ENV === "production",
-      sameSite:"lax",
+      secure:true,
+      sameSite:"none",
       maxAge: 1000 * 60 * 60 * 24 * 7,
     }
 }));
