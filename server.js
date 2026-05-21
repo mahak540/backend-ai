@@ -29,7 +29,7 @@ main().then(()=>{
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://frontend-ai-2ruo.onrender.com/"
+    "https://frontend-ai-2ruo.onrender.com"
   ],
   credentials: true
 }));
