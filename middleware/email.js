@@ -21,6 +21,9 @@ const transporter = nodemailer.createTransport({
   greetingTimeout: 10000,
   socketTimeout: 10000
 });
+transporter.verify()
+  .then(() => console.log("SMTP READY"))
+  .catch(err => console.log("SMTP FAILED:", err));
     
 const sendEmail = async(email,otp)=>{
     try{
