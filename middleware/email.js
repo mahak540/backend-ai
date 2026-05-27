@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
     auth:{
         user:process.env.BREVO_EMAIL,
         pass:process.env.BREVO_SMPT_KEY,
-    }
+    },
     tls: {
     rejectUnauthorized: false
   },
