@@ -30,16 +30,6 @@ app.use(cors({
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-// app.use(session({
-//   secret: "1234",
-//   resave: false,
-//   saveUninitialized: false,
-//   cookie: {
-//     secure: true,
-//     sameSite: "none",
-//     maxAge: 7 * 24 * 60 * 60 * 1000
-//   }
-// }));
 app.use(session({
   secret: "1234",
   resave: false,
@@ -47,8 +37,10 @@ app.use(session({
   cookie: {
     secure: true,
     sameSite: "none",
+    maxAge: 7 * 24 * 60 * 60 * 1000
   }
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
