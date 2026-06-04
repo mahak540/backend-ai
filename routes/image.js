@@ -44,7 +44,7 @@ router.post("/generate-image", async(req,res)=>{
     }
 
 })
-app.get("/test", (req, res) => {
+router.get("/test", (req, res) => {
   res.send("Backend Working");
 });
 router.post("/generate-video", async (req, res) => {
