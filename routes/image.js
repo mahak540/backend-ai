@@ -26,7 +26,7 @@ router.post("/generate-image", async(req,res)=>{
                 prompt
             }
         );
-console.log(response.data);
+
         res.status(200).json({
             success:true,
             image:response.data.image
