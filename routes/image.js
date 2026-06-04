@@ -31,7 +31,7 @@ router.post("/generate-image", async(req,res)=>{
 
  res.status(200).json({
   success: true,
-  image: response.data.image;
+  image: response.data.image
 });
 
     }catch(err){
