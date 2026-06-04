@@ -5,6 +5,9 @@ const router = express.Router();
 const axios = require("axios");
 const url = process.env.PY_URI
 const vidurl=process.env.PY_URL
+router.get("/generate-image", (req, res) => {
+  res.send("generate-image route exists");
+});
 router.post("/generate-image", async(req,res)=>{
     
     try{
