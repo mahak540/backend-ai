@@ -4,7 +4,6 @@ const router = express.Router();
 
 const axios = require("axios");
 const url = process.env.PY_URI
-const vidurl=process.env.PY_URL
 
 router.post("/generate-image", async(req,res)=>{
     
@@ -49,7 +48,7 @@ router.post("/generate-video", async (req, res) => {
   try {
     const { prompt } = req.body;
 
-    const response = await axios.post(`${vidurl}/video`, {
+    const response = await axios.post(`${url}/video`, {
       prompt
     });
 
