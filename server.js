@@ -23,7 +23,7 @@ main().then(()=>{
 app.set("trust proxy", 1);
 // app.use(cors());
 app.use(cors({
-  origin: ["http://localhost:5173", "https://frontend-ai-2ruo.onrender.com"],
+  origin: "https://frontend-ai-2ruo.onrender.com",
   credentials: true
 }));
 
