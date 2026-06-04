@@ -20,7 +20,7 @@ main().then(()=>{
     console.log(err)
 })
 
-
+app.set("trust proxy", 1);
 // app.use(cors());
 app.use(cors({
   origin: ["http://localhost:5173", "https://frontend-ai-2ruo.onrender.com"],
@@ -30,12 +30,21 @@ app.use(cors({
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+// app.use(session({
+//     secret:"1234",
+//     resave:false,
+//     saveUninitialized:false,
+// }))
 app.use(session({
-    secret:"1234",
-    resave:false,
-    saveUninitialized:false,
-}))
-
+  secret: "1234",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: true,
+    sameSite: "none",
+    maxAge: 7 * 24 * 60 * 60 * 1000
+  }
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
